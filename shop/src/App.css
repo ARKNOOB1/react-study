@@ -1,0 +1,11 @@
+.Main {
+  text-align: center;
+  letter-spacing: 0.8px;
+}
+/* 대문 사진 */
+.main-bg {
+  height: 600px;
+  background-image: url('./img/bg-main.png');
+  background-size: cover;
+  background-position: center;
+}
