@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import styled from 'styled-components'
 
@@ -12,6 +13,20 @@ let YelloBtn = styled.button`
     padding : 10px;
     `;
 function Detail (props) {
+    
+    // let [alert, setAlert] = useState(true)
+    // useEffect(() => {
+    //     let timer = setTimeout(() => {
+    //         setAlert(false)
+    //     }, 2000);
+
+    //     return () => {
+    //         clearTimeout(timer);
+    //     }
+    // }, [] )
+
+    let [count, setCount] = useState(0);
+
     let {id} = useParams();
     let myItem = props.shoes.find(function(x) {
         return x.id == id
@@ -31,8 +46,9 @@ function Detail (props) {
                 </div>
                 <div>
                     <Box>
-                        <YelloBtn bg="orange">오렌지버튼 </YelloBtn>
+                        <YelloBtn bg="orange" onClick={()=>{setCount(count+1)}}>오렌지버튼 </YelloBtn>
                         <YelloBtn bg="blue">파란 버튼</YelloBtn>
+                        {/* { alert == true ? <YelloBtn>2초 후 사라짐</YelloBtn> : null } */}
                     </Box>
                 </div>
             </div>
