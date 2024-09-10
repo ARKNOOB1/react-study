@@ -1,17 +1,18 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import styled from 'styled-components'
+import { Nav } from "react-bootstrap";
 
 
-let Box = styled.div`
-    padding : 20px;
-    color : grey;
-    `;
-let YelloBtn = styled.button`
-    background : ${props => props.bg};
-    color : black;
-    padding : 10px;
-    `;
+// let Box = styled.div`
+//     padding : 20px;
+//     color : grey;
+//     `;
+// let YelloBtn = styled.button`
+//     background : ${props => props.bg};
+//     color : black;
+//     padding : 10px;
+//     `;
 function Detail (props) {
     
     // let [alert, setAlert] = useState(true)
@@ -25,7 +26,7 @@ function Detail (props) {
     //     }
     // }, [] )
 
-    let [count, setCount] = useState(0);
+    // let [count, setCount] = useState(0);
 
     let {id} = useParams();
     let myItem = props.shoes.find(function(x) {
@@ -44,12 +45,28 @@ function Detail (props) {
                     <p>{myItem.price}</p>
                     <button className="btn btn-danger">주문하기</button>
                 </div>
-                <div>
-                    <Box>
-                        <YelloBtn bg="orange" onClick={()=>{setCount(count+1)}}>오렌지버튼 </YelloBtn>
-                        <YelloBtn bg="blue">파란 버튼</YelloBtn>
+                {/* <div> */}
+                    {/* <Box> */}
+                        {/* <YelloBtn bg="orange" onClick={()=>{setCount(count+1)}}>오렌지버튼 </YelloBtn> */}
+                        {/* <YelloBtn bg="blue">파란 버튼</YelloBtn> */}
                         {/* { alert == true ? <YelloBtn>2초 후 사라짐</YelloBtn> : null } */}
-                    </Box>
+                    {/* </Box> */}
+                {/* </div> */}
+                <div>
+                    <Nav variant="tabs" defaultActiveKey="link0">
+                        <Nav.Item>
+                            <Nav.Link eventKey="link0">버튼 0</Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link eventKey="link1">버튼 1</Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link eventKey="link2">버튼 2</Nav.Link>
+                        </Nav.Item>
+                    </Nav>
+                    <div>내용0</div>
+                    <div>내용1</div>
+                    <div>내용2</div>
                 </div>
             </div>
         </div>
