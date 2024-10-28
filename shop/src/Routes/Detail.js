@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { json, useParams } from "react-router-dom";
 import styled from 'styled-components'
 import { Nav } from "react-bootstrap";
 import '../App.css';
@@ -52,6 +52,18 @@ function Detail (props) {
         let [탭, 탭변경] = useState(0)
 
         let [fade2, setFade2] = useState('')
+
+
+        useEffect(()=>{
+            let 꺼낸거 = localStorage.getItem('watched')
+            꺼낸거 = JSON.parse(꺼낸거)
+            꺼낸거.push(myItem.id)
+
+            꺼낸거 = new Set(꺼낸거)
+            꺼낸거 = Array.from(꺼낸거)
+            localStorage.setItem('watched', JSON.stringify(꺼낸거))
+        }, [])
+
 
         useEffect(()=>{
             setTimeout(()=>{setFade2('end')}, 100)
