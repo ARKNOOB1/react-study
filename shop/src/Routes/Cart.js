@@ -1,6 +1,6 @@
 import { Button, Table } from 'react-bootstrap';
 import { useDispatch, useSelector } from "react-redux";
-import { changeName, addAge, addCount, delCount } from '../store';
+import { changeName, addAge, addCount, minusCount } from '../store';
 
 function Cart() {
   // localStorage.setItem('데이터 이름', '데이터'); //추가
@@ -42,7 +42,7 @@ function Cart() {
                             dispatch(addCount(i))
                         }}>+</Button>
                         <Button onClick={()=>{
-                            dispatch(delCount(i))
+                            dispatch(minusCount(i))
                         }}>-</Button>
                     </td>
                 </tr>
