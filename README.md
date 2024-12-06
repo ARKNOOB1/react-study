@@ -6,7 +6,7 @@ React 학습 과정을 기록한 프로젝트입니다.
 # Getting Started
 1.Repository Clone
 ```bash
-git clone ~~~
+git clone https://github.com/ARKNOOB1/react-study.git
 ```
 2. npm packages
 ```bash
