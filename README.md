@@ -1,3 +1,5 @@
+# react-study
+
 # Introduction
 React 학습 과정을 기록한 프로젝트입니다.
 수업에서 학습한 내용을 날짜별로 절리하고,
